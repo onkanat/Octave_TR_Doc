@@ -6,7 +6,7 @@ Aşağıdaki konulardan birini seçerek öğrenmeye başlayabilirsiniz.
 
 ## Konular
 
-- [Temel Matematiksel İşlemler](/Octave_temel_matematik/)
+- [Temel Matematiksel İşlemler](/Octave_temel_matematik.md/)
 - [Temel Matris İşlemleri](/Octave_temel_matris/)
 - [Veri İşleme Fonksiyonları](/Octave_veri_işleme/)
 - [Grafik Oluşturma](/Octave_grafik_oluşturma/)
