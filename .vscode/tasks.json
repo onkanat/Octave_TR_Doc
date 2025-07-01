@@ -4,7 +4,7 @@
 		{
 			"type": "shell",
 			"label": "Jekyll Yerel Sunucu Başlat",
-			"command": "/bundle exec jekyll serve",
+			"command": "bundle exec jekyll serve",
 			"args": [],
 			"isBackground": true,
 			"group": "build",
