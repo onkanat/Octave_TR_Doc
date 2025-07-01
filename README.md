@@ -19,6 +19,25 @@ Bu repoda Octave kullanımıyla ilgili Türkçe dokümanlar yer almaktadır. İ�
 Aşağıdaki adımları takip ederek yerel geliştirme ortamınızı hızlıca kurabilirsiniz:
 
 1. Depoyu klonlayın:
-   ```bash
+
+```bash
    git clone https://github.com/onkanat/Octave_TR_Doc.git
    cd Octave_TR_Doc
+```
+
+2. Gerekli araçları yükleyin:
+
+   • Ruby, Bundler, Jekyll
+   • gem install bundler jekyll
+
+3. Bağımlılıkları yükleyin:
+
+```bash
+   bundle install
+```
+4. Jekyll sunucusunu başlatın:
+
+```bash
+   bundle exec jekyll serve
+```
+5. Tarayıcınızda `http://localhost:4000` adresine gidin.
