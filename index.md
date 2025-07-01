@@ -1,11 +1,12 @@
 # Octave Türkçe Dokümantasyon
 
-Bu site, GNU Octave yazılımının kullanımıyla ilgili Türkçe eğitim notları ve pratik örnekler içermektedir.
+Bu site, [GNU Octave](https://octave.org/) yazılımının kullanımıyla ilgili Türkçe eğitim notları ve pratik örnekler içermektedir.
 
-Aşağıdaki konulardan birini seçerek öğrenmeye başlayabilirsiniz.
+Aşağıdaki konulardan birini seçerek öğrenmeye başlayabilirsiniz. Bilgisayarınıza [Octave kurulumunu](https://octave.org/download) yaptıktan sonra, bu belgeleri takip ederek Octave'i daha etkin bir şekilde kullanabilirsiniz.
 
 ## Konular
 
+- [Hızlı Başlangıç](Octave_hizli_baslangic.md)
 - [Temel Matematiksel İşlemler](Octave_temel_matematik.md)
 - [Temel Matris İşlemleri](Octave_temel_matris.md)
 - [Veri İşleme Fonksiyonları](Octave_veri_isleme.md)

@@ -73,3 +73,6 @@ Octave'ın grafik oluşturma araçları hakkında daha fazla bilgi için resmi b
 * [https://octplot.sourceforge.net/quiver.html](https://octplot.sourceforge.net/quiver.html)
 * [https://sourceforge.net/projects/octave/](https://sourceforge.net/projects/octave/)
 * [https://stackoverflow.com/questions/13507700/how-to-plot-two-functions-on-one-graph](https://stackoverflow.com/questions/13507700/how-to-plot-two-functions-on-one-graph)
+
+---
+[Ana Sayfaya Dön](./)

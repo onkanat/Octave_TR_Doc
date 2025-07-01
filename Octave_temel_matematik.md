@@ -70,4 +70,8 @@ ceil(3.14)
 round(1.567, 1)
 ```
 
+
 Bu listedeki fonksiyonlar Octave'de temel matematiksel işlemleri gerçekleştirmek için kullanılan en yaygın fonksiyonlardan sadece birkaçıdır. Daha fazla bilgi için Octave dokümantasyonuna bakabilirsiniz: [https://github.com/gnu-octave/pkg](https://github.com/gnu-octave/pkg)
+
+---
+[Ana Sayfaya Dön](./)

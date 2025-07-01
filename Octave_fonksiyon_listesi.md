@@ -65,7 +65,7 @@ Octave'de **çok sayıda** yerleşik fonksiyon bulunur. En yaygın kullanılanla
 * `doc`: Belirli bir fonksiyon hakkında daha ayrıntılı bilgi almak için `doc <fonksiyon_adı>` komutunu kullanın.
 * `lookfor`: Belirli bir anahtar kelimeyle ilgili fonksiyonları bulmak için `lookfor <anahtar_kelime>` komutunu kullanın.
 
-**Not:** 
-
+**Not:**
 ---
-Ana Sayfaya Dön
+
+[Ana Sayfaya Dön](./)

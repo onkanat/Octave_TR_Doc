@@ -191,4 +191,4 @@ disp(benzersiz_degerler);
 fazla bilgi için Octave belgelerine bakabilirsiniz: 
 
 ---
-Ana Sayfaya Dön
+[Ana Sayfaya Dön](./)

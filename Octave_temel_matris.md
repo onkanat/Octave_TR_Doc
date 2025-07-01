@@ -165,3 +165,6 @@ x
 Bu kod, `A` matrisinin tersini kullanarak `b` vektörüne göre `x` vektörünü çözer.
 
 Octave, matrislerle çalışmayı kolaylaştıran güçlü bir araçtır. Bu temel fonksiyonları öğrenerek, Octave'i birçok bilimsel ve mühendislik problemini çözmek için kullanabilirsiniz.
+
+---
+[Ana Sayfaya Dön](./)
