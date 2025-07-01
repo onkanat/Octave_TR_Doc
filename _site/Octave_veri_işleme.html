@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Octave Türkçe Dokümantasyon | GNU Octave kullanımı üzerine Türkçe eğitim notları ve örnekler.</title>
+<meta name="generator" content="Jekyll v3.9.5" />
+<meta property="og:title" content="Octave Türkçe Dokümantasyon" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="GNU Octave kullanımı üzerine Türkçe eğitim notları ve örnekler." />
+<meta property="og:description" content="GNU Octave kullanımı üzerine Türkçe eğitim notları ve örnekler." />
+<link rel="canonical" href="http://localhost:4000/Octave_veri_i%C5%9Fleme.html" />
+<meta property="og:url" content="http://localhost:4000/Octave_veri_i%C5%9Fleme.html" />
+<meta property="og:site_name" content="Octave Türkçe Dokümantasyon" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Octave Türkçe Dokümantasyon" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"GNU Octave kullanımı üzerine Türkçe eğitim notları ve örnekler.","headline":"Octave Türkçe Dokümantasyon","url":"http://localhost:4000/Octave_veri_i%C5%9Fleme.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1><a href="http://localhost:4000/">Octave Türkçe Dokümantasyon</a></h1>
+
+        
+
+        <p>GNU Octave kullanımı üzerine Türkçe eğitim notları ve örnekler.</p>
+
+        
+        <p class="view"><a href="https://github.com/kullaniciadi/Octave_TR_Doc">View the Project on GitHub <small>kullaniciadi/Octave_TR_Doc</small></a></p>
+        
+
+        
+
+        
+      </header>
+      <section>
+
+      
+<hr />
+<p>layout: default
+title: Octave’de Veri İşleme
+—</p>
+<h1 id="octavede-veri-i̇şleme">Octave’de Veri İşleme:</h1>
+
+<p>Aşağıda, Octave’de veri işleme için kullanılan bazı temel işlevlerin detaylı örnekleri verilmiştir:</p>
+
+<p><strong>1. load:</strong></p>
+
+<p><strong>Amaç:</strong> Dosyadaki verileri Octave çalışma alanına yüklemek.</p>
+
+<p><strong>Kullanım:</strong></p>
+
+<pre><code class="language-octave">load dosya_adı
+</code></pre>
+
+<p><strong>Örnek:</strong></p>
+
+<pre><code class="language-octave"># "data.txt" adında bir dosyada bulunan verileri "x" değişkenine yükleyelim.
+load data.txt
+</code></pre>
+
+<p><strong>2. save:</strong></p>
+
+<p><strong>Amaç:</strong> Çalışma alanındaki verileri bir dosyaya kaydetmek.</p>
+
+<p><strong>Kullanım:</strong></p>
+
+<pre><code class="language-octave">save dosya_adı değişken_adı
+</code></pre>
+
+<p><strong>Örnek:</strong></p>
+
+<pre><code class="language-octave"># "x" değişkenindeki verileri "saved_data.txt" adında bir dosyaya kaydetmek için:
+save saved_data.txt x
+</code></pre>
+
+<p><strong>3. who:</strong></p>
+
+<p><strong>Amaç:</strong> Çalışma alanındaki tüm değişkenleri ve türlerini listelemek.</p>
+
+<p><strong>Kullanım:</strong></p>
+
+<pre><code class="language-octave">who
+</code></pre>
+
+<p><strong>Örnek:</strong></p>
+
+<pre><code class="language-octave"># Çalışma alanındaki değişkenleri ve türlerini listelemek için:
+who
+</code></pre>
+
+<p><strong>4. whos:</strong></p>
+
+<p><strong>Amaç:</strong> Çalışma alanındaki tüm değişkenleri, boyutlarını ve türlerini listelemek.</p>
+
+<p><strong>Kullanım:</strong></p>
+
+<pre><code class="language-octave">whos
+</code></pre>
+
+<p><strong>Örnek:</strong></p>
+
+<pre><code class="language-octave"># Çalışma alanındaki değişkenleri, boyutlarını ve türlerini listelemek için:
+whos
+</code></pre>
+
+<p><strong>5. find:</strong></p>
+
+<p><strong>Amaç:</strong> Bir matriste belirli bir değerin tüm yerlerini bulmak.</p>
+
+<p><strong>Kullanım:</strong></p>
+
+<pre><code class="language-octave">[satir_konum, sutun_konum] = find(matris, aranan_deger)
+</code></pre>
+
+<p><strong>Örnek:</strong></p>
+
+<pre><code class="language-octave"># Aşağıdaki matriste 5 sayısını bulalım:
+A = [1 2 3; 4 5 6; 7 8 9];
+[satir_konum, sutun_konum] = find(A, 5);
+disp(satir_konum);
+disp(sutun_konum);
+</code></pre>
+
+<p><strong>Çıktı:</strong></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2
+2
+</code></pre></div></div>
+
+<p><strong>6. sort:</strong></p>
+
+<p><strong>Amaç:</strong> Bir matrisi sıralamak.</p>
+
+<p><strong>Kullanım:</strong></p>
+
+<pre><code class="language-octave">sirali_matris = sort(matris, siralama_sirasi)
+</code></pre>
+
+<p><strong>Örnek:</strong></p>
+
+<pre><code class="language-octave"># Aşağıdaki matrisi sıralama sırasına göre sıralayalım:
+A = [3 1 5; 9 2 6; 4 7 8];
+sirali_matris = sort(A);
+disp(sirali_matris);
+</code></pre>
+
+<p><strong>Çıktı:</strong></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1 2 3
+4 5 6
+7 8 9
+</code></pre></div></div>
+
+<p><strong>7. filter:</strong></p>
+
+<p><strong>Amaç:</strong> Bir matristen belirli koşullara uyan öğeleri filtrelemek.</p>
+
+<p><strong>Kullanım:</strong></p>
+
+<pre><code class="language-octave">filtrelenmis_matris = filter(matris, kosul)
+</code></pre>
+
+<p><strong>Örnek:</strong></p>
+
+<pre><code class="language-octave"># Aşağıdaki matristen 5'ten büyük olan tüm öğeleri filtreleyelim:
+A = [1 2 3; 4 5 6; 7 8 9];
+kosul = A &gt; 5;
+filtrelenmis_matris = filter(A, kosul);
+disp(filtrelenmis_matris);
+</code></pre>
+
+<p><strong>Çıktı:</strong></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>6
+7
+8
+9
+</code></pre></div></div>
+
+<p><strong>8. unique:</strong></p>
+
+<p><strong>Amaç:</strong> Bir matristen tekrarlanan öğeleri silmek.</p>
+
+<p><strong>Kullanım:</strong></p>
+
+<pre><code class="language-octave">benzersiz_degerler = unique(matris)
+</code></pre>
+
+<p><strong>Örnek:</strong></p>
+
+<pre><code class="language-octave"># Aşağıdaki matristen tekrarlanan öğeleri silelim:
+A = [1 2 3 1 4 5 4 3];
+benzersiz_degerler = unique(A);
+disp(benzersiz_degerler);
+</code></pre>
+
+<p><strong>Çıktı:</strong></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1
+2
+3
+4
+5
+</code></pre></div></div>
+
+<p><strong>Not:</strong> Bu sadece Octave’de veri işleme için kullanılan bazı temel işlevlerin örnekleridir. Daha 
+fazla bilgi için Octave belgelerine bakabilirsiniz:</p>
+
+<hr />
+<p>Ana Sayfaya Dön</p>
+
+
+      </section>
+      <footer>
+        
+        <p>This project is maintained by <a href="https://github.com/kullaniciadi">kullaniciadi</a></p>
+        
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="/assets/js/scale.fix.js"></script>
+  </body>
+</html>

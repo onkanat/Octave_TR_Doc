@@ -1,0 +1,14 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "shell",
+			"label": "Jekyll Yerel Sunucu Başlat",
+			"command": "/bundle exec jekyll serve",
+			"args": [],
+			"isBackground": true,
+			"group": "build",
+			"problemMatcher": []
+		}
+	]
+}
