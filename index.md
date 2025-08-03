@@ -9,6 +9,7 @@ Aşağıdaki konulardan birini seçerek öğrenmeye başlayabilirsiniz. Bilgisay
 - [Hızlı Başlangıç](Octave_hizli_baslangic.md)
 - [Temel Matematiksel İşlemler](Octave_temel_matematik.md)
 - [Temel Matris İşlemleri](Octave_temel_matris.md)
+- [Lineer Cebir](Octave_lineer_cebir.md)
 - [Veri İşleme Fonksiyonları](Octave_veri_isleme.md)
 - [Grafik Oluşturma](Octave_grafik_olusturma.md)
 - [ODE45 ile Newton'un İkinci Yasası Örneği](Octave_ODE45_Newton.md)
