@@ -13,3 +13,5 @@ Aşağıdaki konulardan birini seçerek öğrenmeye başlayabilirsiniz. Bilgisay
 - [Grafik Oluşturma](Octave_grafik_olusturma.md)
 - [ODE45 ile Newton'un İkinci Yasası Örneği](Octave_ODE45_Newton.md)
 - [Sık Kullanılan Fonksiyonlar Listesi](Octave_fonksiyon_listesi.md)
+- [Venn Diyagramı Oluşturma](Octave_venn_diagrami.md)
+- [Octave Çalışma Notları](Octave_Calisma_Notları.md)
