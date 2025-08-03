@@ -5,7 +5,7 @@ title: Octave'da Grafik Oluşturma
 ---
 # Octave'da Grafik Oluşturma
 
-Octave, matematiksel işlevleri ve verileri görselleştirmek için güçlü bir grafik oluşturma araçlarına sahiptir. Temel grafik işlevleri şunlardır:
+Octave, matematiksel işlevleri ve verileri görselleştirmek için güçlü grafik oluşturma araçları sunar. Temel grafik işlevleri şunlardır:
 
 **plot:** Temel çizgi grafiği oluşturmak için kullanılır.
 **xlabel:** X ekseninin etiketini ekler.
@@ -66,7 +66,7 @@ Bu kod, `sinüs` ve `kosinüs` fonksiyonlarının grafiklerini yan yana alt graf
 
 **Daha Fazla Bilgi:**
 
-Octave'ın grafik oluşturma araçları hakkında daha fazla bilgi için resmi belgelere bakabilirsiniz: [https://sourceforge.net/projects/octave/](https://sourceforge.net/projects/octave/)
+Octave'in grafik oluşturma araçları hakkında daha fazla bilgi için resmi belgelere bakabilirsiniz: [https://sourceforge.net/projects/octave/](https://sourceforge.net/projects/octave/)
 
 **Ek Örnekler:**
 

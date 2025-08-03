@@ -3,6 +3,7 @@
 layout: default
 title: Octave'de Veri İşleme
 ---
+
 # Octave'de Veri İşleme:
 
 Aşağıda, Octave'de veri işleme için kullanılan bazı temel işlevlerin detaylı örnekleri verilmiştir:
@@ -77,27 +78,27 @@ whos
 
 **5. find:**
 
-**Amaç:** Bir matriste belirli bir değerin tüm yerlerini bulmak.
+**Amaç:** Bir matriste belirli bir koşulu sağlayan öğelerin konumlarını bulmak.
 
 **Kullanım:**
 
 ```octave
-[satir_konum, sutun_konum] = find(matris, aranan_deger)
+[satir_konum, sutun_konum] = find(matris == aranan_deger)
 ```
 
 **Örnek:**
 
 ```octave
-# Aşağıdaki matriste 5 sayısını bulalım:
+# Aşağıdaki matriste 5 sayısının konumunu bulalım:
 A = [1 2 3; 4 5 6; 7 8 9];
-[satir_konum, sutun_konum] = find(A, 5);
+[satir_konum, sutun_konum] = find(A == 5);
 disp(satir_konum);
 disp(sutun_konum);
 ```
 
 **Çıktı:**
 
-```
+```plaintext
 2
 2
 ```
@@ -123,20 +124,20 @@ disp(sirali_matris);
 
 **Çıktı:**
 
-```
+```plaintext
 1 2 3
 4 5 6
 7 8 9
 ```
 
-**7. filter:**
+**7. Mantıksal İndeksleme (Filtreleme):**
 
 **Amaç:** Bir matristen belirli koşullara uyan öğeleri filtrelemek.
 
 **Kullanım:**
 
 ```octave
-filtrelenmis_matris = filter(matris, kosul)
+filtrelenmis_degerler = matris(kosul)
 ```
 
 **Örnek:**
@@ -145,13 +146,13 @@ filtrelenmis_matris = filter(matris, kosul)
 # Aşağıdaki matristen 5'ten büyük olan tüm öğeleri filtreleyelim:
 A = [1 2 3; 4 5 6; 7 8 9];
 kosul = A > 5;
-filtrelenmis_matris = filter(A, kosul);
-disp(filtrelenmis_matris);
+filtrelenmis_degerler = A(kosul);
+disp(filtrelenmis_degerler);
 ```
 
 **Çıktı:**
 
-```
+```plaintext
 6
 7
 8
@@ -179,7 +180,7 @@ disp(benzersiz_degerler);
 
 **Çıktı:**
 
-```
+```plaintext
 1
 2
 3
@@ -187,8 +188,7 @@ disp(benzersiz_degerler);
 5
 ```
 
-**Not:** Bu sadece Octave'de veri işleme için kullanılan bazı temel işlevlerin örnekleridir. Daha 
-fazla bilgi için Octave belgelerine bakabilirsiniz: 
+**Not:** Bu sadece Octave'de veri işleme için kullanılan bazı temel işlevlerin örnekleridir. Daha fazla bilgi için [Octave belgelerine](https://octave.org/support) bakabilirsiniz:
 
 ---
 [Ana Sayfaya Dön](./)

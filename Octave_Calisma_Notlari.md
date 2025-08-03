@@ -101,6 +101,7 @@ run-octave -f list_func.m
 Birden fazla alana sahip bir yapı diziniz var ve belirli bir alandaki değere tüm öğelerden erişmek istiyorsunuz. Örneğin, aşağıdaki durumda tüm hastaların yaşını döndürmek istiyorsunuz:
 
 ```octave
+```octave
 ornekler = struct("hasta",   {"Bob", "Kevin", "Bob", "Andrew"},
                   "yaş",     {45,    52,      45,    23},
                   "protein", {"H2B", "CDK2", "CDK2", "Tip60"},
@@ -131,8 +132,8 @@ Tüm değerleri virgülle ayrılmış listeler halinde döndürmek, bunlardan is
 Ayrıca tüm elemanları döndürmekle sınırlı değilsiniz, diğer alanlardan mantıksal indekslemeyi kullanarak diğerlerinden değer alabilirsiniz:
 
 ```octave
-[samples([samples(:).age] > 34).tube]                  ## 34 yaşından büyük hastalardan alınan tüm örneklerin tüp numaralarını döndür
-[samples(strcmp({samples(:).protein}, "CDK2")).tube]   ## protein CDK2 için tüm tüp numaralarını döndür
+[ornekler([ornekler(:).yaş] > 34).tüp]                    ## 34 yaşından büyük hastalardan alınan tüm örneklerin tüp numaralarını döndür
+[ornekler(strcmp({ornekler(:).protein}, "CDK2")).tüp]     ## protein CDK2 için tüm tüp numaralarını döndür
 ```
 
 ## Dizi Manipülasyonu
@@ -184,7 +185,8 @@ degerler = [64, 72, 70];
 ```
 
 ve şunu görüntülemek istiyorsunuz:
-```
+
+```text
 Hesaplanan insan genomu GC içeriği %64'tür
 Hesaplanan fare genomu GC içeriği %72'dir
 Hesaplanan tavuk genomu GC içeriği %70'tir
@@ -246,12 +248,15 @@ fprintf('%15.15s | %15.15s\n', Metin{k, 1}, Metin{k, 2});
 `%<n>.<m>s` sözdizimi, `n` karakterlik yer ayırır ve görüntülenecek dizenin ilk `m` karakterini görüntüler.
 
 **Örnek:**
+
 ```octave
 Metin = {"Merhaba", "Dünya"};
 fprintf('%15.15s | %15.15s\n', Metin{1, 1}, Metin{1, 2})
 ```
+
 Çıktı:
-```
+
+```text
          Merhaba |           Dünya
 ```
 
@@ -345,7 +350,7 @@ char(nchoosek(uint8(string), n))
 ```
 
 **Tartışma:**
-Octave'deki bir dize, yalnızca bir karakter matrisidir ve sayısal biçime kolayca dönüştürülebilir. Her karakterin ilişkili bir numarası vardır (`ascii` paketin `table` işlevi, güzel biçimlendirilmiş bir dönüştürme tablosu görüntüler).
+Octave'deki bir dize, yalnızca bir karakter matrisidir ve sayısal biçime kolayca dönüştürülebilir. Her karakterin ilişkili bir numarası vardır (`ascii` paketinin `table` işlevi, güzel biçimlendirilmiş bir dönüştürme tablosu görüntüler).
 
 ### Tekrarlı Permütasyonlar
 

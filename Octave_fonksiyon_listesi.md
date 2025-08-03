@@ -23,7 +23,7 @@ Octave'de **çok sayıda** yerleşik fonksiyon bulunur. En yaygın kullanılanla
 **Matris İşlemleri:**
 
 * `zeros`: Sıfır matrisi oluşturma
-* `ones`: Bir matrisi oluşturma
+* `ones`: Birler matrisi oluşturma
 * `eye`: Birim matrisi oluşturma
 * `size`: Matrisin boyutunu alma
 * `reshape`: Matrisin boyutunu değiştirme
