@@ -1,0 +1,20 @@
+# Jekyll build files
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
+# Bundle config
+.bundle/
+vendor/
+
+# macOS files
+.DS_Store
+
+# Editor files
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
