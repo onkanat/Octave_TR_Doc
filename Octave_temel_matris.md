@@ -1,4 +1,3 @@
-
 ---
 layout: default
 title: Octave'de Temel Matris İşlemleri

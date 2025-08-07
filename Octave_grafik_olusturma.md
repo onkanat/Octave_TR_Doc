@@ -1,4 +1,3 @@
-
 ---
 layout: default
 title: Octave'da Grafik Oluşturma

@@ -1,4 +1,3 @@
-
 ---
 layout: default
 title: Octave'de ODE45 ve Newton'un İkinci Yasası

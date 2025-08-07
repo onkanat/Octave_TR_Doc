@@ -14,6 +14,7 @@ Aşağıdaki konulardan birini seçerek öğrenmeye başlayabilirsiniz. Bilgisay
 - [Döngüler ve Koşullar](Octave_loops_conditions.md)
 - [Veri İşleme Fonksiyonları](Octave_veri_isleme.md)
 - [Grafik Oluşturma](Octave_grafik_olusturma.md)
+- [Bilimsel Hesap Makinesi GUI](Octave_bilimsel_hesap_makinesi_gui.md)
 - [Metin ve Dosya Çıktısı](Octave_metin_dosya_ciktisi.md)
 - [ODE45 ile Newton'un İkinci Yasası Örneği](Octave_ODE45_Newton.md)
 - [Sık Kullanılan Fonksiyonlar Listesi](Octave_fonksiyon_listesi.md)
