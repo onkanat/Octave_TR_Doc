@@ -5,3 +5,12 @@ description: >-
 repository: onkanat/Octave_TR_Doc
 url: "https://onkanat.github.io/Octave_TR_Doc"
 baseurl: "/Octave_TR_Doc"
+
+# Syntax highlighting & Markdown engine
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    guess_lang: true

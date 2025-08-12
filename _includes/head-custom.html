@@ -1,0 +1,16 @@
+<!-- Client-side syntax highlighting via highlight.js for languages Rouge lacks (e.g., Octave) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/matlab.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('pre code').forEach((el) => {
+      // Map custom 'octave' to matlab lexer for client-side highlighting
+      if (el.classList.contains('language-octave')) {
+        el.classList.remove('language-octave');
+        el.classList.add('language-matlab');
+      }
+      hljs.highlightElement(el);
+    });
+  });
+  </script>
