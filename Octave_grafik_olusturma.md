@@ -73,5 +73,112 @@ Octave'in grafik oluşturma araçları hakkında daha fazla bilgi için resmi be
 * [https://sourceforge.net/projects/octave/](https://sourceforge.net/projects/octave/)
 * [https://stackoverflow.com/questions/13507700/how-to-plot-two-functions-on-one-graph](https://stackoverflow.com/questions/13507700/how-to-plot-two-functions-on-one-graph)
 
+## İleri Düzey Grafik Uygulamaları
+
+Octave, 2D grafiklerin yanı sıra verileri üç boyutta görselleştirmek ve dinamik grafikler oluşturmak için de güçlü yeteneklere sahiptir.
+
+### 3D Grafikler: `plot3`, `surf` ve `mesh`
+
+Octave, üç boyutlu verileri görselleştirmek için çeşitli fonksiyonlar sunar.
+
+*   **`plot3`**: 3D uzayda çizgiler ve noktalar çizmek için kullanılır.
+*   **`mesh`**: 3D yüzeyleri bir tel kafes (wireframe) olarak çizer.
+*   **`surf`**: 3D yüzeyleri dolu renklerle çizer.
+
+**Örnek: Bir Dağın Topografik Haritası**
+
+`peaks` fonksiyonu, iki değişkenli bir normal dağılım karışımından oluşan ve genellikle 3D grafik çizimlerini test etmek için kullanılan bir yüzey oluşturur.
+
+```octave
+% 50x50'lik bir grid oluştur
+[x, y] = meshgrid(-3:0.125:3);
+
+% Z değerlerini (yükseklikleri) hesapla
+z = peaks(x, y);
+
+figure; % Yeni bir grafik penceresi aç
+
+% surf ile yüzey grafiği
+subplot(1, 2, 1);
+surf(x, y, z);
+title('surf ile Yüzey Grafiği');
+xlabel('X Ekseni');
+ylabel('Y Ekseni');
+zlabel('Yükseklik');
+colorbar; % Renk skalası ekle
+
+% mesh ile tel kafes grafiği
+subplot(1, 2, 2);
+mesh(x, y, z);
+title('mesh ile Tel Kafes Grafiği');
+xlabel('X Ekseni');
+ylabel('Y Ekseni');
+zlabel('Yükseklik');
+```
+
+### Döngü ile Animasyon Oluşturma
+
+Bir `for` döngüsü içinde grafiği sürekli güncelleyerek basit animasyonlar oluşturulabilir. `drawnow` komutu, her döngü adımında grafiğin yeniden çizilmesini sağlar.
+
+**Örnek: İlerleyen Bir Sinüs Dalgası Animasyonu**
+
+```octave
+x = 0:0.1:2*pi;
+figure; % Animasyon için yeni pencere
+
+for t = 0:0.1:10
+    % Zamanla değişen sinüs dalgası
+    y = sin(x - t);
+
+    % Grafiği çiz
+    plot(x, y, 'LineWidth', 2);
+    
+    % Eksenleri sabit tut
+    axis([0, 2*pi, -1.2, 1.2]);
+    
+    title(['İlerleyen Dalga (Zaman = ', num2str(t, '%.1f'), 's)']);
+    xlabel('Konum');
+    ylabel('Genlik');
+    
+    % Grafiği güncelle
+    drawnow;
+    
+    % Animasyonu yavaşlatmak için kısa bir duraklama
+    pause(0.05);
+end
+```
+
+### Grafik Özelliklerini `get` ve `set` ile Değiştirme
+
+Octave'de oluşturulan her grafik bir nesnedir ve bu nesnenin özellikleri (rengi, çizgi kalınlığı, yazı tipi boyutu vb.) `get` ve `set` komutları ile dinamik olarak sorgulanabilir ve değiştirilebilir.
+
+`gca` (get current axes) ve `gcf` (get current figure) komutları sırasıyla mevcut eksen ve şekil nesnelerine bir "handle" (tanıtıcı) döndürür.
+
+**Örnek: Grafik Özelliklerini Dinamik Olarak Ayarlama**
+
+```octave
+x = linspace(0, 2*pi, 100);
+y = sin(x);
+
+% Grafiği çiz ve çizgiye bir handle ata
+h_plot = plot(x, y);
+
+% Mevcut eksenlere bir handle ata
+h_axes = gca;
+
+% 'get' ile çizginin mevcut rengini öğren
+original_color = get(h_plot, 'Color');
+fprintf('Orijinal çizgi rengi: [%.1f, %.1f, %.1f]\n', original_color);
+
+% 'set' ile çizgi ve eksen özelliklerini değiştir
+set(h_plot, 'LineWidth', 4, 'Color', 'red', 'LineStyle', '--');
+set(h_axes, 'FontSize', 14, 'FontWeight', 'bold', 'GridColor', 'blue');
+
+title('set ile Değiştirilmiş Grafik');
+xlabel('X Ekseni');
+ylabel('Y Ekseni');
+grid on;
+```
+
 ---
 [Ana Sayfaya Dön](./)

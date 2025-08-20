@@ -53,7 +53,7 @@ A_inv = inv(A);
 
 * **`A / B`** - X'i şu şekilde hesaplar: `X*B = A`. Bu sağ bölme olarak adlandırılır ve B'nin tersini oluşturmadan yapılır.
 
-* **`A \ B`** - X'i şu şekilde hesaplar: `A*X = B`. Bu sol bölme olarak adlandırılır ve A'nın tersini oluşturmadan yapılır.
+* **`A \ B** - X'i şu şekilde hesaplar: `A*X = B`. Bu sol bölme olarak adlandırılır ve A'nın tersini oluşturmadan yapılır.
 
 ```octave
 A = [2 1; 1 3];
@@ -227,6 +227,113 @@ b = rand(1000, 1);
 % Yavaş yöntem: x = inv(A) * b;
 % Hızlı yöntem:
 x = A \ b;
+```
+
+## İleri Düzey Uygulama Örnekleri
+
+Bu bölümde, lineer cebirin gerçek dünya problemlerine nasıl uygulandığını gösteren daha karmaşık örnekler sunulmaktadır.
+
+### Elektrik Devresi Analizi (Kirchhoff Yasaları)
+
+Kirchhoff'un akım ve gerilim yasaları, lineer denklem sistemleri kurarak elektrik devrelerini analiz etmek için kullanılır. Kirchhoff'un Gerilim Yasası (KVL) ile iki döngülü bir devrenin denklemleri aşağıdaki gibi oluşturulabilir:
+
+- **Döngü 1:** `V_kaynak = (R1+R2)*I1 - R2*I2`
+- **Döngü 2:** `0 = -R2*I1 + (R2+R3)*I2`
+
+Bu denklemler matris formunda `A*x = b` olarak ifade edilebilir, burada `x` akım vektörü `[I1; I2]`'dir.
+
+```octave
+% Direnç değerleri
+R1 = 2; % Ohm
+R2 = 5; % Ohm
+R3 = 3; % Ohm
+V_kaynak = 10; % Volt
+
+% KVL denklemlerinden A matrisi ve b vektörü
+A = [R1+R2, -R2; -R2, R2+R3];
+b = [V_kaynak; 0];
+
+% Akımları (I1, I2) çözmek için sol bölme kullanılır
+I = A \ b;
+
+fprintf('Döngü 1 Akımı (I1): %.2f A\n', I(1));
+fprintf('Döngü 2 Akımı (I2): %.2f A\n', I(2));
+
+% Devredeki diğer değerler de hesaplanabilir
+% Örneğin R2 üzerindeki gerilim:
+V_R2 = R2 * (I(1) - I(2));
+fprintf('R2 üzerindeki gerilim: %.2f V\n', V_R2);
+```
+
+### Köprü Denge Denklemleri
+
+Basit bir kafes kiriş (truss) köprünün denge denklemleri, her bir düğümdeki kuvvetlerin toplamının sıfır olması prensibine dayanır. Bu, lineer denklem sistemleri ile modellenebilir.
+
+Örneğin, her bir çubuktaki gerilme kuvvetlerini (T) bulmak için her düğümdeki x ve y yönündeki kuvvetleri dengeleyen denklemler yazılır. Bu denklemler `A*T = F` şeklinde bir matris denklemine dönüştürülür, burada `F` dış kuvvetleri temsil eder.
+
+```octave
+% Bu örnek semboliktir ve belirli bir köprü geometrisine dayanmaz.
+% Gerçek bir problemde A matrisi, çubukların açılarına ve
+% düğümlere nasıl bağlandığına göre oluşturulur.
+
+% 2 düğüm ve 3 çubuklu basit bir sistem varsayalım
+% A matrisi geometriye göre belirlenir
+A = [cosd(45), 1; sind(45), 0];
+% F vektörü dış kuvvetleri temsil eder (örneğin 1000N dikey yük)
+F = [0; 1000];
+
+% Çubuklardaki gerilme kuvvetlerini (T1, T2) hesapla
+T = A \ F;
+
+fprintf('Çubuk 1''deki gerilme kuvveti: %.2f N\n', T(1));
+fprintf('Çubuk 2''deki gerilme kuvveti: %.2f N\n', T(2));
+```
+
+### Markov Zincirleri ile Hava Durumu Tahmini
+
+Markov zincirleri, bir durumdan diğerine geçiş olasılıklarını modellemek için kullanılır. Örneğin, bir günün "Güneşli" veya "Bulutlu" olma olasılığını, bir önceki günün hava durumuna göre tahmin edebiliriz.
+
+Geçiş Matrisi `P`, bir durumdan diğerine geçiş olasılıklarını içerir. `P(i, j)`, durum `j`'den durum `i`'ye geçme olasılığıdır.
+
+Diyelim ki geçiş matrisimiz şöyle olsun:
+- Güneşli -> Güneşli: 0.9
+- Güneşli -> Bulutlu: 0.1
+- Bulutlu -> Güneşli: 0.5
+- Bulutlu -> Bulutlu: 0.5
+
+```octave
+% Geçiş Matrisi P (sütunlar bugünü, satırlar yarını temsil eder)
+% Sütun 1: Bugün Güneşli ise... Satır 1: Yarın Güneşli, Satır 2: Yarın Bulutlu
+% Sütun 2: Bugün Bulutlu ise... Satır 1: Yarın Güneşli, Satır 2: Yarın Bulutlu
+P = [0.9, 0.5;
+     0.1, 0.5];
+
+% Başlangıç durumu: Bugün Güneşli (%100 olasılık)
+% Durum vektörü: [Güneşli; Bulutlu]
+x0 = [1; 0];
+
+% 1 gün sonraki hava durumu olasılığı
+x1 = P * x0;
+fprintf('1 gün sonra Güneşli olma olasılığı: %.2f\n', x1(1));
+fprintf('1 gün sonra Bulutlu olma olasılığı: %.2f\n', x1(2));
+
+% 7 gün sonraki hava durumu olasılığı
+x7 = P^7 * x0;
+fprintf('7 gün sonra Güneşli olma olasılığı: %.2f\n', x7(1));
+fprintf('7 gün sonra Bulutlu olma olasılığı: %.2f\n', x7(2));
+
+% Kararlı durum (steady state) dağılımını bulma
+% Bu, P'nin 1'e eşit olan özdeğerine karşılık gelen özvektördür.
+[V, lambda] = eig(P);
+% Özdeğerlerin 1'e en yakın olduğu sütunu bul
+[~, idx] = min(abs(diag(lambda) - 1));
+steady_state_vector = V(:, idx);
+% Olasılıkların toplamı 1 olacak şekilde normalize et
+steady_state_vector = steady_state_vector / sum(steady_state_vector);
+
+fprintf('\nUzun vadede (kararlı durumda):\n');
+fprintf('Güneşli bir gün olma olasılığı: %.2f\n', steady_state_vector(1));
+fprintf('Bulutlu bir gün olma olasılığı: %.2f\n', steady_state_vector(2));
 ```
 
 ---

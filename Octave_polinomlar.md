@@ -217,5 +217,123 @@ ylabel('y');
 title('Polinom Uydurma Örneği');
 ```
 
+## Veri Uydurma (`polyfit`) İçin İleri Düzey Örnekler
+
+`polyfit` fonksiyonu sadece basit veri setlerine değil, aynı zamanda gerçek dünya problemlerinden elde edilen verileri modellemek için de güçlü bir araçtır.
+
+### Gerçek Dünya Verisi ile Hareket Denklemi Tahmini
+
+Bir cismin belirli zamanlardaki konum verisini kullanarak, `polyfit` ile hareket denklemini (genellikle ikinci dereceden bir polinom) tahmin edebiliriz. Yerçekimi altındaki bir cismin konumu `y(t) = y₀ + v₀t + 0.5at²` formülü ile verilir. Bu, ikinci dereceden bir polinomdur.
+
+```octave
+% Zaman (s) ve konum (m) verileri
+t = [0, 0.5, 1.0, 1.5, 2.0, 2.5]; % Zaman
+y = [10, 12.5, 14.0, 14.5, 14.0, 12.5]; % Ölçülen konum
+
+% Verilere 2. dereceden bir polinom uydur
+% p(1) = 0.5*a, p(2) = v₀, p(3) = y₀
+p = polyfit(t, y, 2);
+
+% Polinom katsayılarından hareket parametrelerini tahmin et
+a = 2 * p(1); % İvme
+v0 = p(2);    % Başlangıç hızı
+y0 = p(3);    % Başlangıç konumu
+
+fprintf('Tahmin edilen ivme (a): %.2f m/s²
+', a);
+fprintf('Tahmin edilen başlangıç hızı (v₀): %.2f m/s
+', v0);
+fprintf('Tahmin edilen başlangıç konumu (y₀): %.2f m
+', y0);
+
+% Sonuçları görselleştir
+t_fit = linspace(min(t), max(t), 100);
+y_fit = polyval(p, t_fit);
+
+plot(t, y, 'o', 'DisplayName', 'Ölçülen Veri');
+hold on;
+plot(t_fit, y_fit, '-', 'DisplayName', 'Uydurulan Model');
+hold off;
+xlabel('Zaman (s)');
+ylabel('Konum (m)');
+title('Hareket Denklemi Tahmini');
+legend('show');
+grid on;
+```
+
+### Aşırı Uyum (Overfitting) Problemi
+
+`polyfit` kullanırken polinomun derecesini (`n`) çok yüksek seçmek, modelin verideki gürültüyü de öğrenmesine neden olabilir. Bu duruma "aşırı uyum" (overfitting) denir. Model, mevcut veriye mükemmel uyar ancak yeni verileri tahmin etmede başarısız olur.
+
+Aşağıdaki örnekte, basit bir kuadratik ilişkiye sahip veriye hem 2. dereceden (doğru model) hem de 9. dereceden (aşırı uyum) bir polinom uyduracağız.
+
+```octave
+% Gerçek ilişki: y = 0.5x² - 2x + 3 + gürültü
+x = -5:1:5;
+y_gercek = 0.5*x.^2 - 2*x + 3;
+y_gurultulu = y_gercek + 2.5 * randn(size(x)); % Gürültü ekle
+
+% 2. dereceden polinom uydur (uygun model)
+p2 = polyfit(x, y_gurultulu, 2);
+
+% 9. dereceden polinom uydur (aşırı uyum)
+p9 = polyfit(x, y_gurultulu, 9);
+
+% Sonuçları görselleştirmek için daha yoğun bir x aralığı oluştur
+x_plot = -5:0.1:5;
+y_fit2 = polyval(p2, x_plot);
+y_fit9 = polyval(p9, x_plot);
+
+plot(x, y_gurultulu, 'ko', 'DisplayName', 'Gürültülü Veri');
+hold on;
+plot(x_plot, y_fit2, 'b-', 'LineWidth', 2, 'DisplayName', '2. Derece (Uygun)');
+plot(x_plot, y_fit9, 'r-', 'LineWidth', 2, 'DisplayName', '9. Derece (Aşırı Uyum)');
+hold off;
+ylim([-5, 30]);
+legend('show', 'Location', 'north');
+title('Aşırı Uyum (Overfitting) Örneği');
+xlabel('x');
+ylabel('y');
+grid on;
+```
+Görüldüğü gibi, 9. dereceden polinom veri noktalarından geçmek için aşırı salınımlar yaparken, 2. dereceden polinom verinin genel trendini daha iyi yakalamaktadır.
+
+### Ekonomik Trend Modellemesi
+
+Polinomsal regresyon, zaman içindeki ekonomik verileri (örneğin, bir ürünün fiyatı, GSYİH, vb.) modellemek ve gelecekteki eğilimleri tahmin etmek için kullanılabilir.
+
+Aşağıda, bir ürünün son 10 yıldaki fiyat verilerini modelleyen bir örnek bulunmaktadır.
+
+```octave
+% Yıllar ve Fiyat verileri
+yillar = 2015:1:2024;
+fiyatlar = [50, 55, 62, 70, 80, 85, 95, 110, 130, 155];
+
+% Verilere 2. dereceden bir polinom uydurarak trendi modelle
+p_trend = polyfit(yillar, fiyatlar, 2);
+
+% Gelecek 5 yıl için tahmin yap
+gelecek_yillar = 2025:1:2029;
+tahmini_fiyatlar = polyval(p_trend, gelecek_yillar);
+
+fprintf('Gelecek yıllar için fiyat tahminleri:
+');
+for i = 1:length(gelecek_yillar)
+    fprintf('%d yılı: %.2f TL
+', gelecek_yillar(i), tahmini_fiyatlar(i));
+end
+
+% Modeli ve tahminleri görselleştir
+plot(yillar, fiyatlar, 'o-', 'DisplayName', 'Geçmiş Veriler');
+hold on;
+plot(gelecek_yillar, tahmini_fiyatlar, 'r*--', 'DisplayName', 'Tahminler');
+hold off;
+xlabel('Yıl');
+ylabel('Fiyat (TL)');
+title('Ekonomik Trend Modellemesi ve Tahmin');
+legend('show');
+grid on;
+```
+
 ---
 [Ana Sayfaya Dön](./)
