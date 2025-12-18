@@ -10,11 +10,11 @@ Mevcut belgelerdeki örnekleri çeşitlendirerek ve derinleştirerek kullanıcı
 - **Örnekler:**
   - Bir elektrik devresinin analizini (Kirchhoff Yasaları) lineer denklem sistemiyle çözme.
   - Bir yapının (örneğin basit bir köprü) denge denklemlerini matrislerle modelleme.
-  - Marka zincirleri (Markov chains) ile basit bir durum geçiş modellemesi (örneğin, hava durumu tahmini).
+  - Markov zincirleri (Markov chains) ile basit bir durum geçiş modellemesi (örneğin, hava durumu tahmini).
 
 ### Polinomlar ve Veri Uydurma (`polyfit`)
 - **Örnekler:**
-  - Gerçek dünya verisi (örneğin, bir cismin belirli zamanlardaki konum verisi) kullanarak `polyfit` ile hareket denklemini tahmin etme.
+  - Gerçek dünya verisi (örneğin, bir cismin belirli zamandaki konum verisi) kullanarak `polyfit` ile hareket denklemini tahmin etme.
   - Farklı derece (`n`) seçiminin "overfitting" (aşırı uyum) sorununa nasıl yol açtığını gösteren bir örnek.
   - Ekonomik bir trendi (örneğin, bir ürünün fiyatının yıllara göre değişimi) polinomsal regresyon ile modelleme.
 
