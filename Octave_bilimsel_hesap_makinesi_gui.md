@@ -5,7 +5,7 @@ title: "Octave Bilimsel Hesap Makinesi GUI"
 
 # Octave Bilimsel Hesap Makinesi GUI – Detaylı Açıklama
 
-Bu dokümanda, `bilimsel_hesap_makinesi_gui.m` dosyasındaki kodun satır satır ne işe yaradığını açıklıyoruz. Bu açıklamalar, MATLAB/Octave ortamında GUI ile çalışan bir bilimsel hesap makinesinin nasıl yazıldığını anlamanıza yardımcı olur.
+Bu dokümanda, `src/bilimsel_hesap_makinesi_gui.m` dosyasındaki kodun satır satır ne işe yaradığını açıklıyoruz. Bu açıklamalar, MATLAB/Octave ortamında GUI ile çalışan bir bilimsel hesap makinesinin nasıl yazıldığını anlamanıza yardımcı olur.
 
 ## Projeye Giriş
 
@@ -26,6 +26,7 @@ Bu proje, Octave'de grafik kullanıcı arayüzü (GUI) kullanarak basit ama işl
 ```octave
 function bilimsel_hesap_makinesi_gui()
 ```
+
 - Hesap makinesi GUI'sini başlatan ana fonksiyonun tanımıdır.
 - Bu fonksiyon çağrıldığında hesap makinesi penceresi açılır.
 
@@ -35,6 +36,7 @@ function bilimsel_hesap_makinesi_gui()
 f = figure('Name', 'Bilimsel Hesap Makinesi', 'NumberTitle', 'off', ...
            'Position', [500 300 360 400], 'MenuBar', 'none', 'Resize', 'off');
 ```
+
 - **`figure`**: Yeni bir pencere (figure) oluşturur.
 - **`'Name'`**: Pencere başlığını "Bilimsel Hesap Makinesi" olarak ayarlar.
 - **`'NumberTitle', 'off'`**: Otomatik numara başlığını kapatır.
@@ -50,6 +52,7 @@ exprBox = uicontrol('Style', 'edit', 'Parent', f, ...
     'HorizontalAlignment','right', 'String', '', ...
     'KeyPressFcn', @exprBoxKeyPress);
 ```
+
 - **`uicontrol`**: Kullanıcı arayüz kontrolü oluşturur.
 - **`'Style', 'edit'`**: Metin girişi kutusu tipi.
 - **`'Parent', f`**: Ana pencereye bağlar.
@@ -70,6 +73,7 @@ buttons = { ...
   'pi', 'e', '!', 'C', '', '' ...
 };
 ```
+
 - Hesap makinesi tuş takımında kullanılacak tuşların etiketleri 5x6 matris olarak tanımlanıyor.
 - Her satır tuş takımının bir sırasını temsil eder.
 - Boş string ('') olan hücreler tuş oluşturulmaz.
@@ -80,6 +84,7 @@ buttons = { ...
 btn_w = 50; btn_h = 40; gap = 10;
 start_x = 20; start_y = 290;
 ```
+
 - **`btn_w = 50`**: Tuş genişliği 50 piksel.
 - **`btn_h = 40`**: Tuş yüksekliği 40 piksel.
 - **`gap = 10`**: Tuşlar arası boşluk 10 piksel.
@@ -100,6 +105,7 @@ for i = 1:size(buttons,1)
     end
 end
 ```
+
 - **İç içe döngüler**: Matristeki her tuş için işlem yapar.
 - **`if isempty(label), continue; end`**: Boş hücreler için tuş oluşturmaz.
 - **Konum hesaplama**: Her tuşun x,y koordinatını hesaplar.
@@ -138,6 +144,7 @@ end
 ```
 
 **Çalışma Mantığı:**
+
 1. **Tuş kontrolü**: Enter/Return tuşuna basıldığını kontrol eder.
 2. **İfade alma**: Metin kutusundan girilen ifadeyi alır.
 3. **Dönüşümler**: Matematiksel ifadeleri Octave'nin anlayacağı forma çevirir:
@@ -209,6 +216,7 @@ end
 ```
 
 **Önemli Özellikler:**
+
 - **`persistent expr`**: Değişken fonksiyon çağrıları arasında korunur.
 - **Switch-case yapısı**: Farklı tuş türleri için farklı işlemler.
 - **Sayı/operatör tuşları**: Direkt olarak ifadeye eklenir.
@@ -223,6 +231,7 @@ function y = fakt(n)
     y = prod(1:n);
 end
 ```
+
 - **`prod(1:n)`**: 1'den n'ye kadar tüm sayıların çarpımını hesaplar.
 - **Örnek**: `fakt(5)` = 1×2×3×4×5 = 120
 
@@ -231,6 +240,7 @@ end
 ## Kullanım Örnekleri
 
 ### Temel İşlemler
+
 ```octave
 % Hesap makinesini başlat
 bilimsel_hesap_makinesi_gui()
@@ -244,6 +254,7 @@ bilimsel_hesap_makinesi_gui()
 ```
 
 ### Karmaşık İfadeler
+
 ```octave
 % sin(pi/4) + cos(pi/4) = 1.4142
 % sqrt(2^2 + 3^2) = 3.6056

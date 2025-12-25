@@ -13,9 +13,9 @@ Octave'de sınıflar, `classdef` anahtar kelimesi kullanılarak tanımlanır ve 
 
 Bir sınıf tanımı, temel olarak üç bölümden oluşur:
 
-1.  **`properties`**: Nesnenin durumunu veya verilerini tutan değişkenlerdir. Her nesne (o sınıftan oluşturulan her bir örnek), bu özelliklerin kendi kopyasına sahip olur.
-2.  **`methods`**: Sınıfın nesneleri üzerinde işlem yapan fonksiyonlardır. Bu metotlar, nesnenin özelliklerine erişebilir ve onları değiştirebilir.
-3.  **Constructor (Yapıcı Metot)**: Sınıfla aynı isme sahip olan özel bir metottur. Bir sınıftan yeni bir nesne oluşturulduğunda otomatik olarak çağrılır ve genellikle nesnenin başlangıç özelliklerini ayarlamak için kullanılır.
+    1.  **`properties`**: Nesnenin durumunu veya verilerini tutan değişkenlerdir. Her nesne (o sınıftan oluşturulan her bir örnek), bu özelliklerin kendi kopyasına sahip olur.
+    2.  **`methods`**: Sınıfın nesneleri üzerinde işlem yapan fonksiyonlardır. Bu metotlar, nesnenin özelliklerine erişebilir ve onları değiştirebilir.
+    3.  **Constructor (Yapıcı Metot)**: Sınıfla aynı isme sahip olan özel bir metottur. Bir sınıftan yeni bir nesne oluşturulduğunda otomatik olarak çağrılır ve genellikle nesnenin başlangıç özelliklerini ayarlamak için kullanılır.
 
 ### Örnek: Basit bir "Banka Hesabı" Sınıfı
 

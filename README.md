@@ -25,19 +25,21 @@ Aşağıdaki adımları takip ederek yerel geliştirme ortamınızı hızlıca k
    cd Octave_TR_Doc
 ```
 
-2. Gerekli araçları yükleyin:
+1. Gerekli araçları yükleyin:
 
-   • Ruby, Bundler, Jekyll
-   • gem install bundler jekyll
+   - Ruby, Bundler, Jekyll
+   - gem install bundler jekyll
 
-3. Bağımlılıkları yükleyin:
+2. Bağımlılıkları yükleyin:
 
 ```bash
    bundle install
 ```
-4. Jekyll sunucusunu başlatın:
+
+1. Jekyll sunucusunu başlatın:
 
 ```bash
    bundle exec jekyll serve
 ```
-5. Tarayıcınızda `http://localhost:4000` adresine gidin.
+
+1. Tarayıcınızda `http://localhost:4000` adresine gidin.

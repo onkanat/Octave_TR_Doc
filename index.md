@@ -27,3 +27,7 @@ Aşağıdaki konulardan birini seçerek öğrenmeye başlayabilirsiniz. Bilgisay
 - [Sık Kullanılan Fonksiyonlar Listesi](Octave_fonksiyon_listesi.md)
 - [Venn Diyagramı Oluşturma](Octave_venn_diagrami.md)
 - [Octave Çalışma Notları](Octave_Calisma_Notlari.md)
+- [Octave Matematik Alıştırmaları](Octave_matematik_alistirmalari.md)
+- [Octave Fizik Alıştırmaları](Octave_fizik_alistirmalari.md)
+- [Octave Mühendislik Alıştırmaları](Octave_muhendislik_alistirmalari.md)
+- [Octave Fonksiyon Yazımı ve Örnek Uygulama](Octave_functions_example.md)

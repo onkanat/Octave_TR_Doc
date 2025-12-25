@@ -18,3 +18,11 @@ vendor/
 
 # Logs
 *.log
+
+# text files
+yeni.txt
+
+# Octave workspace
+octave-workspace
+src/octave-workspace
+

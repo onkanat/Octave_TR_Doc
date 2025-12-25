@@ -19,4 +19,4 @@ text (0, 0, " community ", ...
   "Color", "w");
 axis off;
 
-print -dpng /Users/hakankilicaslan/Prompts/Octave_TR_Doc/assets/img/venn_diagram.png
+print -dpng /Users/hakankilicaslan/GitHub/Octave_TR_Doc/assets/img/venn_diagram.png
