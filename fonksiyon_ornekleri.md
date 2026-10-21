@@ -149,8 +149,8 @@ printf("      Fonksiyon adi rakamla baslayamaz: src/2point_line.m -> two_point_l
 
 Betik, eskiden `src/` altında dört ayrı dosyaya dağılmış aynı işi (`two_point_line.m`,
 `circle_center.m`, `check_intersection.m`, `visualize_intersection.m`) tek bir çalıştırılabilir
-betiğe toplar. `src/` altındaki dosyalar tarihsel olarak yerinde durur; bu betik onlara
-bağımlı değildir.
+betiğe toplar. Eski parçalar Faz 5'te `_arsiv/kod-eski/src/` altına taşındı (silinmedi); bu betik
+onlara bağımlı değildir.
 
 ## Beklenen Çıktı
 

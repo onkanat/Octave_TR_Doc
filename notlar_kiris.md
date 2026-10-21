@@ -328,7 +328,7 @@ printf("      tanimli. Yapi dizisi ve n boyutlu dilim ayni betikte olculdu.\n");
 [3] paketler: general, image, control, matgeom, geometry, struct, parallel, datatypes, llms
 [3]   pkg("list", "signal") bos mu: 1 (kurulu degil)
 [3]   pkg("list", "statistics") bos mu: 1 (kurulu degil)
-[4] yerlesik + m-dosya fonksiyon sayisi: 1806
+[4] yerlesik + m-dosya fonksiyon sayisi: 1805
 [4] ilk uc ad: EDITOR, EXEC_PATH, F_DUPFD
 [5] yas dizisi            : [45 52 45 23]
 [5] reshape ile korunmus  : [45 52 45 23]
@@ -338,9 +338,13 @@ printf("      tanimli. Yapi dizisi ve n boyutlu dilim ayni betikte olculdu.\n");
 [6] array_slice testleri: 4/4 gecti
 [6] tek boyut kaldirma: size(B) = [1 3 4] -> reshape = [3 4]
 
-Ozet: ortam 64 bit indeksliyor, Java yok, 9 paket kurulu, 1806 fonksiyon
+Ozet: ortam 64 bit indeksliyor, Java yok, 9 paket kurulu, 1805 fonksiyon
       tanimli. Yapi dizisi ve n boyutlu dilim ayni betikte olculdu.
 ```
+
+> Not: `[4]` satırındaki sayı ortamın gördüğü fonksiyonları sayar (Octave sürümü + kurulu paketler +
+> yol üzerindeki `.m` dosyaları). 21.10.2026'da kökten kaldırılan eski `venn_script.m` bir fonksiyon
+> (`venn_circle`) tanımladığı için sayı 1806 → 1805 oldu; değer bu makinede ölçülmüştür.
 
 ## Öne Çıkan Noktalar
 
@@ -353,7 +357,7 @@ Ozet: ortam 64 bit indeksliyor, Java yok, 9 paket kurulu, 1806 fonksiyon
 - **9 paket kurulu:** `general, image, control, matgeom, geometry, struct, parallel,
   datatypes, llms`. `signal` ve `statistics` **kurulu değil** — bu yüzden Faz 3'teki sinyal
   notunda `butter`/`cheby1` yerine pencerelenmiş sinc kullanıldı (aynı dosyanın gerekçesi).
-- **1806 çağrılabilir ad:** `__builtins__()` (C++ yerleşikleri) ile `__list_functions__()`
+- **1805 çağrılabilir ad:** `__builtins__()` (C++ yerleşikleri) ile `__list_functions__()`
   (m-dosya fonksiyonları) birleşimi. Liste sürüme bağlıdır; betiğe sayı yazmak yerine saydırmak
   bu yüzden doğru yol.
 - **`array_slice` dört testi de geçiyor** (2B, 3B, 4B, 5B). `repelems({":"}, [1; ndims(A)])`
