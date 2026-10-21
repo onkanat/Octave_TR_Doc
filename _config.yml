@@ -1,12 +1,22 @@
-theme: jekyll-theme-minimal
-title: Octave Türkçe Dokümantasyon
-description: >-
-  GNU Octave kullanımı üzerine Türkçe eğitim notları ve örnekler.
+# VAKIF — onkanat ortak marka dili (W8, 21.10.2026)
+# Görünüm: _layouts/default.html + assets/css/vakif.css (iki eğitim reposunda birebir aynı).
+# Tema satırı (jekyll-theme-minimal) W8.3 ile kaldırıldı; tema gem'ine bağımlılık yok.
+title: "Octave Türkçe Dokümantasyon"
+brand: "Octave"
+brand_suffix: "eğitim notları"
+eyebrow: "EĞİTİM · OCTAVE"
+description: "GNU Octave kullanımı üzerine Türkçe eğitim notları ve örnekler."
+lang: tr
 repository: onkanat/Octave_TR_Doc
-url: "https://onkanat.github.io/Octave_TR_Doc"
+
+# url: site kökü; baseurl: proje sayfası yolu. jekyll-sitemap/relative_links bu ikisini birleştirir
+# (eski url değeri yolu da içeriyordu → sitemap'te çift yol üretiyordu; W8'de düzeltildi).
+url: "https://onkanat.github.io"
 baseurl: "/Octave_TR_Doc"
 
-# Syntax highlighting & Markdown engine
+# Rouge'un Octave lexer'ı yok → istemci tarafı highlight.js (octave→matlab) devreye girer.
+highlight_js: true
+
 markdown: kramdown
 highlighter: rouge
 kramdown:
@@ -14,3 +24,24 @@ kramdown:
   syntax_highlighter: rouge
   syntax_highlighter_opts:
     guess_lang: true
+
+plugins:
+  - jekyll-redirect-from
+  - jekyll-optional-front-matter
+  - jekyll-titles-from-headings
+  - jekyll-relative-links
+  - jekyll-sitemap
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - .bundle
+  - _site
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+      lang: tr
