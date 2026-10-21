@@ -6,12 +6,12 @@ Aşağıdaki konulardan birini seçerek öğrenmeye başlayabilirsiniz. Bilgisay
 
 ## Konular
 
-- [Hızlı Başlangıç](Octave_hizli_baslangic.md)
-- [Temel Matematiksel İşlemler](Octave_temel_matematik.md)
-- [Temel Matris İşlemleri](Octave_temel_matris.md)
-- [Lineer Cebir](Octave_lineer_cebir.md)
-- [Polinomlar](Octave_polinomlar.md)
-- [Döngüler ve Koşullar](Octave_loops_conditions.md)
+- [Hızlı Başlangıç](hizli_baslangic.md)
+- [Temel Matematiksel İşlemler](temel_matematik.md)
+- [Temel Matris İşlemleri](temel_matris.md)
+- [Lineer Cebir](lineer_cebir.md)
+- [Polinomlar](polinomlar.md)
+- [Döngüler ve Koşullar](donguler_kosullar.md)
 - [Veri İşleme Fonksiyonları](Octave_veri_isleme.md)
 - [Grafik Oluşturma](Octave_grafik_olusturma.md)
 - [İleri Düzey Veri Yapıları](Octave_advanced_data_structures.md)
@@ -30,4 +30,5 @@ Aşağıdaki konulardan birini seçerek öğrenmeye başlayabilirsiniz. Bilgisay
 - [Octave Matematik Alıştırmaları](Octave_matematik_alistirmalari.md)
 - [Octave Fizik Alıştırmaları](Octave_fizik_alistirmalari.md)
 - [Octave Mühendislik Alıştırmaları](Octave_muhendislik_alistirmalari.md)
+- [Güç Kaynağı Filtre Analizi](Octave_power_supply.md)
 - [Octave Fonksiyon Yazımı ve Örnek Uygulama](Octave_functions_example.md)
