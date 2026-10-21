@@ -64,7 +64,12 @@
 
 <main id="icerik" class="site-main">
   <div class="container-onkanat">
-{%- if page.url == "/" %}
+{%- comment -%}
+  Ana sayfa artık "geniş" dala değil, makale ızgarasına düşer: kullanıcı isteği (21.10.2026)
+  "ana sayfada sol sütunda içindekiler eksik". Geniş dal yalnız `genis_layout: true`
+  ön bilgisiyle açılır (şu an hiçbir sayfa kullanmıyor).
+{%- endcomment -%}
+{%- if page.genis_layout %}
     <div class="makale-body genis">
       <p class="eyebrow">{{ site.eyebrow }}</p>
       <div class="makale-prose">
@@ -92,6 +97,12 @@
 {%- if page.kod and page.kod != "" %}
         <a class="makale-rail-kod" href="{{ page.kod | prepend: '/' | relative_url }}">{{ page.kod }}</a>
 {%- endif %}
+{%- comment -%}
+  İçindekiler: başlık metni inline kod içerdiğinde (`## Başlık (\`kod\`)`) eski `slice: 1`
+  yalnız ilk parçayı alıp `Filtreleme (` gibi kesik etiket üretiyor ve açık `<a>` bırakıp
+  SAYFANIN TAMAMINI bağlantı içine alıyordu (tüm satırlar altı çizili hatası, 21.10.2026).
+  Düzeltme: `>` ile bölünen parçaların TAMAMI birleştirilir, sonra strip_html uygulanır.
+{%- endcomment -%}
 {%- assign _parcalar = content | split: "<h2" -%}
 {%- if _parcalar.size > 1 and page.toc != false %}
         <nav class="rail-toc" aria-label="İçindekiler">
@@ -101,9 +112,9 @@
 {%- assign _etiket = _p | split: "</h2>" | first -%}
 {%- if _etiket contains 'id="' -%}
 {%- assign _id = _etiket | split: 'id="' | last | split: '"' | first -%}
-{%- assign _metin = _etiket | split: ">" | slice: 1 | join: "" | strip_html | strip -%}
+{%- assign _metin = _etiket | split: ">" | slice: 1, 80 | join: ">" | strip_html | strip -%}
 {%- if _id != "" and _metin != "" %}
-            <li><a href="#{{ _id }}">{{ _metin }}</a></li>
+            <li><a href="#{{ _id }}">{{ _metin | escape }}</a></li>
 {%- endif -%}
 {%- endif -%}
 {%- endfor %}
