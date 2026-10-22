@@ -41,6 +41,7 @@ Notlardaki "Beklenen Çıktı" blokları, betiğin gerçek koşusundan alınmı�
 | [Octave'de ODE45 ve Newton'un İkinci Yasası](ode45_newton.md) | Mühendislik | Orta | Ders | [`ode45_newton.m`](ode45_newton.m) |
 | [Güç Kaynağı Filtresi Analizi (power_supply.m)](power_supply.md) | Mühendislik | Orta | Ders | [`power_supply.m`](power_supply.m) |
 | [Octave'de Sinyal İşleme: FFT ve FIR Filtre](sinyal_isleme.md) | Mühendislik | Orta | Ders | [`sinyal_isleme.m`](sinyal_isleme.m) |
+| [Octave'de Anten Hesabı: HF Tel Boyu, Unun ve Ferrit Çubuk Rezonansı](anten_hesap.md) | Mühendislik | Orta | Ders | [`anten_hesap.m`](anten_hesap.m) |
 | [Octave Bilimsel Hesap Makinesi GUI](bilimsel_hesap_makinesi_gui.md) | İleri | İleri | Ders | [`bilimsel_hesap_makinesi_gui.m`](bilimsel_hesap_makinesi_gui.m) |
 | [Octave'de Nesne Yönelimli Programlama: classdef, Değer ve handle](oop.md) | İleri | İleri | Ders | [`oop.m`](oop.m) |
 | [Octave'de Optimizasyon: Minimizasyon, Eğri Uydurma, Denklem Çözme](optimizasyon.md) | İleri | İleri | Ders | [`optimizasyon.m`](optimizasyon.m) |
@@ -48,7 +49,7 @@ Notlardaki "Beklenen Çıktı" blokları, betiğin gerçek koşusundan alınmı�
 | [Octave Çalışma Notları: Ortam, Paketler, Yapılar ve Diziler](notlar_kiris.md) | İleri | Orta | Ders | [`notlar_kiris.m`](notlar_kiris.m) |
 | [Octave Sık Kullanılan Fonksiyonlar Listesi](fonksiyon_listesi.md) | Temel | Başlangıç | Başvuru | — |
 
-**28 not** · 27 kod çifti (`<slug>.m` ile birlikte) · 1 salt başvuru notu (kod çifti yok).
+**29 not** · 28 kod çifti (`<slug>.m` ile birlikte) · 1 salt başvuru notu (kod çifti yok).
 
 ## Tüm Notlar {#tum-notlar}
 
@@ -63,6 +64,7 @@ Notlardaki "Beklenen Çıktı" blokları, betiğin gerçek koşusundan alınmı�
 - [Octave Çalışma Notları: Giriş/Çıkış, Tablo ve Grafik](notlar_grafik.md) — Veri · Orta
 - [Octave Çalışma Notları: Kombinatorik, Matematik ve ODE](notlar_matematik.md) — Temel · İleri
 - [Octave Çalışma Notları: Ortam, Paketler, Yapılar ve Diziler](notlar_kiris.md) — İleri · Orta
+- [Octave'de Anten Hesabı: HF Tel Boyu, Unun ve Ferrit Çubuk Rezonansı](anten_hesap.md) — Mühendislik · Orta
 - [Octave'de Döngüler ve Koşullar](donguler_kosullar.md) — Temel · Başlangıç
 - [Octave'de Fonksiyon Yazımı ve Mühendislik Uygulaması](fonksiyon_ornekleri.md) — Mühendislik · Orta
 - [Octave'de Grafik Oluşturma: 2B, 3B ve Animasyon](grafik_olusturma.md) — Grafik · Orta
