@@ -42,6 +42,7 @@ Notlardaki "Beklenen Çıktı" blokları, betiğin gerçek koşusundan alınmı�
 | [Güç Kaynağı Filtresi Analizi (power_supply.m)](power_supply.md) | Mühendislik | Orta | Ders | [`power_supply.m`](power_supply.m) |
 | [Octave'de Sinyal İşleme: FFT ve FIR Filtre](sinyal_isleme.md) | Mühendislik | Orta | Ders | [`sinyal_isleme.m`](sinyal_isleme.m) |
 | [Octave'de Anten Hesabı: HF Tel Boyu, Unun ve Ferrit Çubuk Rezonansı](anten_hesap.md) | Mühendislik | Orta | Ders | [`anten_hesap.m`](anten_hesap.m) |
+| [Octave'de Gezer Köprülü Kren Hesabı: Tekerlekten Kirişe](gezer_kren_hesabi.md) | Mühendislik | İleri | Ders | [`gezer_kren_hesabi.m`](gezer_kren_hesabi.m) |
 | [Octave Bilimsel Hesap Makinesi GUI](bilimsel_hesap_makinesi_gui.md) | İleri | İleri | Ders | [`bilimsel_hesap_makinesi_gui.m`](bilimsel_hesap_makinesi_gui.m) |
 | [Octave'de Nesne Yönelimli Programlama: classdef, Değer ve handle](oop.md) | İleri | İleri | Ders | [`oop.m`](oop.m) |
 | [Octave'de Optimizasyon: Minimizasyon, Eğri Uydurma, Denklem Çözme](optimizasyon.md) | İleri | İleri | Ders | [`optimizasyon.m`](optimizasyon.m) |
@@ -49,7 +50,7 @@ Notlardaki "Beklenen Çıktı" blokları, betiğin gerçek koşusundan alınmı�
 | [Octave Çalışma Notları: Ortam, Paketler, Yapılar ve Diziler](notlar_kiris.md) | İleri | Orta | Ders | [`notlar_kiris.m`](notlar_kiris.m) |
 | [Octave Sık Kullanılan Fonksiyonlar Listesi](fonksiyon_listesi.md) | Temel | Başlangıç | Başvuru | — |
 
-**29 not** · 28 kod çifti (`<slug>.m` ile birlikte) · 1 salt başvuru notu (kod çifti yok).
+**30 not** · 29 kod çifti (`<slug>.m` ile birlikte) · 1 salt başvuru notu (kod çifti yok).
 
 ## Tüm Notlar {#tum-notlar}
 
@@ -67,6 +68,7 @@ Notlardaki "Beklenen Çıktı" blokları, betiğin gerçek koşusundan alınmı�
 - [Octave'de Anten Hesabı: HF Tel Boyu, Unun ve Ferrit Çubuk Rezonansı](anten_hesap.md) — Mühendislik · Orta
 - [Octave'de Döngüler ve Koşullar](donguler_kosullar.md) — Temel · Başlangıç
 - [Octave'de Fonksiyon Yazımı ve Mühendislik Uygulaması](fonksiyon_ornekleri.md) — Mühendislik · Orta
+- [Octave'de Gezer Köprülü Kren Hesabı: Tekerlekten Kirişe](gezer_kren_hesabi.md) — Mühendislik · İleri
 - [Octave'de Grafik Oluşturma: 2B, 3B ve Animasyon](grafik_olusturma.md) — Grafik · Orta
 - [Octave'de Görüntü İşleme: Okuma, Manipülasyon, Kenar ve Histogram](goruntu_isleme.md) — Mühendislik · Orta
 - [Octave'de İleri Düzey Veri Yapıları: Hücre Dizileri ve Yapılar](ileri_veri_yapilari.md) — Veri · Orta
